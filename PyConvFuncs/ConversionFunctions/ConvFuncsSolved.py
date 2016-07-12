@@ -36,7 +36,7 @@ class ConvFuncsSolved(object):
                               iterable):
         '''
         return True if all elements of the parameter iterable are true or the iterable is empty
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -54,7 +54,7 @@ class ConvFuncsSolved(object):
         '''
         return True if any element of the parameter iterable is true
         or False if the iterable is empty
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -71,7 +71,7 @@ class ConvFuncsSolved(object):
                              value):
         '''
         return a floating point number of the parameter value
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -84,11 +84,27 @@ class ConvFuncsSolved(object):
         return result
     
     
+    def int_to_hex_value(self,
+                         value):
+        '''
+        return a hexadecimal string of the parameter value
+        or TypeError or ValueError if it is invalid
+        '''
+        
+        try:
+            result = hex(value)
+        except TypeError as err:
+            result = err
+        except ValueError as err:
+            result = err
+            
+        return result
+    
     def integer_value(self,
                       value):
         '''
         return an integer number of the parameter value
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -105,7 +121,7 @@ class ConvFuncsSolved(object):
                                     iterable):
         '''
         return largest item of an iterable
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -124,7 +140,7 @@ class ConvFuncsSolved(object):
                                    *args):
         '''
         return largest item of two or more arguments
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -141,7 +157,7 @@ class ConvFuncsSolved(object):
                         value):
         '''
         return an integer number of the length of the parameter value
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -158,7 +174,7 @@ class ConvFuncsSolved(object):
                                      iterable):
         '''
         return smallest item of an iterable
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -177,7 +193,7 @@ class ConvFuncsSolved(object):
                                    *args):
         '''
         return smallest item of two or more arguments
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:
@@ -196,7 +212,7 @@ class ConvFuncsSolved(object):
                            reverse=False):
         '''
         return a sorted iterable of the iterable parameter
-        or ValueError if it is invalid
+        or TypeError or ValueError if it is invalid
         '''
         
         try:

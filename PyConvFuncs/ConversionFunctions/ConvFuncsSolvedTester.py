@@ -125,6 +125,29 @@ class ConvFuncsSolvedTester(unittest.TestCase):
         result = self.convFuncsSolved.absolute_value(value)
         self.assertIsInstance(result, TypeError)
      
+    def test_int_to_hex_value(self):
+        
+        value = -4
+        result = self.convFuncsSolved.int_to_hex_value(value)
+        self.assertIsInstance(result, str)
+        self.assertEqual(result, hex(value))
+        
+        value = -4.6
+        result = self.convFuncsSolved.int_to_hex_value(value)
+        self.assertIsInstance(result, TypeError)
+        
+        value = None
+        result = self.convFuncsSolved.int_to_hex_value(value)
+        self.assertIsInstance(result, TypeError)
+        
+        value = ''
+        result = self.convFuncsSolved.int_to_hex_value(value)
+        self.assertIsInstance(result, TypeError)
+        
+        value = 'x'
+        result = self.convFuncsSolved.int_to_hex_value(value)
+        self.assertIsInstance(result, TypeError)
+     
     def test_integer_value(self):
         
         value = -4.6
